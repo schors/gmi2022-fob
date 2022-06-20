@@ -1,0 +1,36 @@
+\mode<presentation>
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+  \ifnum\thepage=1\relax%
+   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=\the\paperwidth, height=\the\paperheight]{titlebg.png}};
+   \fi
+  \ifnum\thepage>1\relax%
+   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=\the\paperwidth, height=\the\paperheight]{pagebg.png}};
+   \coordinate (y) at (5,5);
+   \node[anchor=south west] at(0.2cm,0cm) {\color{text}\large\insertframenumber};
+   \node[anchor=south west] at(1cm,-0.05cm) {\color{text}\tiny\insertauthor,  «\inserttitle»,  \insertdate};
+   \fi
+  \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{sm2022}[1][]
+{
+    \vskip2.5cm%
+    \begin{beamercolorbox}[leftskip=0.5cm,left,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    \vskip0.75cm%
+    \begin{beamercolorbox}[leftskip=0.5cm,left,#1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+    \vskip0.75cm%
+    \begin{beamercolorbox}[leftskip=0.5cm,left,#1]{date}
+      \usebeamerfont{text}\scriptsize\insertdate%
+    \end{beamercolorbox}
+    \vspace{9cm}
+}
+
+\mode
+<all>
