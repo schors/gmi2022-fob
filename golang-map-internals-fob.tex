@@ -200,10 +200,10 @@ type hmap struct {
 \end{frame}
 
 \begin{frame}{Организация корзин. Адресация}
-        Размер map'ы hash.B
+        Размер map'ы hmap.B
         \begin{itemize}
-                \item $2^{hash.B}$ --- количество корзин
-                \item hash.B --- маска значимых битов хэша ключа \\
+                \item hmap.B --- маска значимых битов хэша ключа \\
+                \item $2^{hmap.B}$ --- количество корзин
                 \item Значимые биты --- индекс в массиве корзин
         \end{itemize}
 \end{frame}
